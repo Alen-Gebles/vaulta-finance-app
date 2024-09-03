@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-clr:#F8F4F0;
+}
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+*/
+body {
+  box-sizing: border-box;
+background-color: var(--bg-clr);
+padding-left: 400px;
+}
+
+/*//////////////////////////////////////////////////*/
+
+@media (max-width:1550px){
+  body{
+    padding-left: 300px;
+  }
+}
+
+@media (max-width:1064px){
+  body{
+    padding-left: 250px;
+  }
+}
+@media (max-width:764px){
+  body{
+    padding-left: 80px;
+  }
+}
