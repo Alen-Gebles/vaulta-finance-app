@@ -19,6 +19,9 @@ body {
 background-color: var(--bg-clr);
 padding-left: 400px;
 }
+/*/////////////////////////////////////////////////////*/
+
+  
 
 /*//////////////////////////////////////////////////*/
 
@@ -35,6 +38,6 @@ padding-left: 400px;
 }
 @media (max-width:764px){
   body{
-    padding-left: 80px;
+    padding-left: 0px;
   }
 }
