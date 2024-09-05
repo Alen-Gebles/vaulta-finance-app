@@ -2,7 +2,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  width: 400px;
+  width: 300px;
   min-height: 100vh;
   background-color: black;
   border-radius: 0px 15px 15px 0px;
@@ -11,6 +11,7 @@
 
 .sidebar-hide{
   width: 60px !important;
+  border-radius: 0px !important;
 }
 .logo{
   font-size: 35px;
@@ -75,22 +76,6 @@
 
 /*//////////////////////////////////////////////////*/
 
-@media (max-width:1550px){
-  .sidebar{
-    width: 300px;
-  }
-  .logo{
-    font-size: 33px;
-  }
-}
-@media (max-width:1064px){
-  .sidebar{
-    width: 250px;
-  }
-  .logo{
-    font-size: 30px;
-  }
-}
 @media (max-width:764px){
   .sidebar{
     display: none;

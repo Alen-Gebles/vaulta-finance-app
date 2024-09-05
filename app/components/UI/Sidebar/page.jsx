@@ -2,7 +2,7 @@
 
 import React from 'react'
 import './sidebar.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Sidebar() {
 
@@ -11,13 +11,22 @@ export default function Sidebar() {
     setMinimize(!minimize);
   };
 
+  useEffect(() => {
+    if (minimize) {
+      document.body.style.paddingLeft = '60px';
+    }
+    else {
+      document.body.style.paddingLeft = '300px';
+    }
+  }, [minimize]);
+
   return (
     <section className={`sidebar ${minimize ? 'sidebar-hide' : ''}`}  >
       <h1 className={`logo ${minimize ? 'opacity-0' : ''}`}>Vaulta</h1>
 
       <div className='sidebar-link-box'>
         <button className={`sidebar-link ${minimize ? 'justify-end' : ''}`}>
-          <svg className={`sidebar-link-svg ${minimize ? 'w-7' : ''}`} width="auto" height="auto" viewBox="0 0 24 24" fill="#696868" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11.3861 1.21065C11.7472 0.929784 12.2528 0.929784 12.6139 1.21065L21.6139 8.21065C21.8575 8.4001 22 8.69141 22 9V20.5C22 21.3284 21.3284 22 20.5 22H15V14C15 13.4477 14.5523 13 14 13H10C9.44772 13 9 13.4477 9 14V22H3.5C2.67157 22 2 21.3284 2 20.5V9C2 8.69141 2.14247 8.4001 2.38606 8.21065L11.3861 1.21065Z" fill="#696868"></path> </g></svg>
+          <svg className='sidebar-link-svg' width="auto" height="auto" viewBox="0 0 24 24" fill="#696868" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11.3861 1.21065C11.7472 0.929784 12.2528 0.929784 12.6139 1.21065L21.6139 8.21065C21.8575 8.4001 22 8.69141 22 9V20.5C22 21.3284 21.3284 22 20.5 22H15V14C15 13.4477 14.5523 13 14 13H10C9.44772 13 9 13.4477 9 14V22H3.5C2.67157 22 2 21.3284 2 20.5V9C2 8.69141 2.14247 8.4001 2.38606 8.21065L11.3861 1.21065Z" fill="#696868"></path> </g></svg>
           <p className={`${minimize ? 'hidden' : ''}`}>Overview</p>
         </button>
 
