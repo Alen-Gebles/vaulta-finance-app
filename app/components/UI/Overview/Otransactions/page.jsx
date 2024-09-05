@@ -3,6 +3,6 @@ import React from 'react'
 
 export default function Otransactions() {
   return (
-    <div className='overview-box'>Otransactions</div>
+    <div className='overview-box otransactions'>Otransactions</div>
   )
 }

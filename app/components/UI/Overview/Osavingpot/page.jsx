@@ -3,6 +3,6 @@ import React from 'react'
 
 export default function Osavingpot() {
   return (
-    <div className='overview-box'>Osavingpot</div>
+    <div className='overview-box osavingpot'>Osavingpot</div>
   )
 }

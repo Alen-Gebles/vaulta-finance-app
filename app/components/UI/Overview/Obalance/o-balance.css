@@ -1,0 +1,26 @@
+.obalanceBox{
+  display: flex;
+  width: 100%;
+  height: 150px;
+  gap: 20px;
+  background-color: transparent !important;
+}
+.balance-box{
+  background-color: white;
+  flex-grow: 1;
+  border-radius: 15px;
+}
+
+/*//////////////////////////////*/
+
+@media (max-width:576px){
+  .obalanceBox{
+    flex-direction: column;
+    height: calc(150px * 3) ;
+  }
+  .balance-box{
+    background-color: white;
+    flex-grow: 1;
+    border-radius: 15px;
+  }
+}

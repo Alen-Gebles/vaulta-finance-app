@@ -12,10 +12,20 @@ function Overview() {
   return (
     <section className='overview-main'>
       <Obalance />
-      <Omybudget />
-      <Oreccuringbills />
-      <Osavingpot />
-      <Otransactions />
+
+    <div className='overviewContainer'>
+      <div className='overview2'>
+        <Osavingpot />
+        <Otransactions />
+      </div>
+
+      <div className='overview3'>
+        <Omybudget />
+        <Oreccuringbills />  
+      </div>
+    </div>
+      
+      
     </section>
   )
 }
