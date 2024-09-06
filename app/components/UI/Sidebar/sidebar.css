@@ -4,7 +4,7 @@
   top: 0;
   width: 300px;
   min-height: 100vh;
-  background-color: black;
+  background-color: var(--main-dark-clr);
   border-radius: 0px 15px 15px 0px;
   color: white;
 }
@@ -32,7 +32,7 @@
   gap: 10px;
   height: 60px;
   width: 100%;
-  background-color: rgb(0, 0, 0);
+  background-color: inherit;
   color: #696868;
   letter-spacing: 0.5px;
   font-weight: 500;

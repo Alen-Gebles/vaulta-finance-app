@@ -6,21 +6,43 @@
   background-color: transparent !important;
 }
 .balance-box{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-color: white;
   flex-grow: 1;
   border-radius: 15px;
 }
-
+.balance-box p{
+  margin-bottom: 5px;
+  white-space: nowrap;
+  font-size: max(13px, min(2.5vw, 18px));
+}
+.balance-box h2{
+  hite-space: nowrap;
+  font-size: max(25px, min(2.5vw, 38px));
+  font-weight: 600;
+}
+.bb{
+  color: var(--main-dark-clr);
+}
+.bb1{
+  background-color: var(--main-dark-clr);
+  color: white !important;
+}
 /*//////////////////////////////*/
-
+/*
+@media (max-width:1064px){
+  .balance-box h2{
+    font-size: 30px;
+    font-weight: 600;
+  }
+}
+*/
 @media (max-width:576px){
   .obalanceBox{
     flex-direction: column;
     height: calc(150px * 3) ;
-  }
-  .balance-box{
-    background-color: white;
-    flex-grow: 1;
-    border-radius: 15px;
   }
 }

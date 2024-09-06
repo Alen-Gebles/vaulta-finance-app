@@ -1,9 +1,13 @@
-import Image from "next/image";
-
 import Overview from "./components/UI/Overview/page";
 
-export default function Home() {
+export default async function Home() {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  const res = await fetch(`${baseUrl}/data.json`);
+  const data = await res.json();
+
   return (
-    <Overview />
+    <main>
+      <Overview data={data} />
+    </main>
   );
 }

@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --bg-clr:#F8F4F0;
+  --bg-clr:#e8e4df;
+  --main-dark-clr:#201F24;
 }
 /*
 @media (prefers-color-scheme: dark) {
