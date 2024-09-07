@@ -4,7 +4,8 @@
 
 :root {
   --bg-clr:#e8e4df;
-  --main-dark-clr:#201F24;
+  --main-dark-clr:#070606;
+  --light-clr:#484545;
 }
 /*
 @media (prefers-color-scheme: dark) {
@@ -19,7 +20,13 @@ body {
   box-sizing: border-box;
 background-color: var(--bg-clr);
 padding-left: 300px;
-height: 2000px;
+height: auto;
+}
+
+.MainHeadline{
+  font-size: 35px;
+  font-weight: 600;
+  margin-block: 20px;
 }
 /*/////////////////////////////////////////////////////*/
 
@@ -27,7 +34,7 @@ height: 2000px;
 
 /*//////////////////////////////////////////////////*/
 
-@media (max-width:764px){
+@media (max-width:1024px){
   body{
     padding-left: 0px !important;
   }

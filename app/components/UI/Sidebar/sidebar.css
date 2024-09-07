@@ -15,7 +15,7 @@
 }
 .logo{
   font-size: 35px;
-  padding: 20px 0px 0px 20px;
+  margin: 45px 0px 0px 20px;
 }
 
 .sidebar-link-box{
@@ -76,7 +76,7 @@
 
 /*//////////////////////////////////////////////////*/
 
-@media (max-width:764px){
+@media (max-width:1024px){
   .sidebar{
     display: none;
   }

@@ -11,7 +11,7 @@ import React from 'react'
 function Overview({ data }) {
   return (
     <section className='overview-main'>
-      {/*<h1 className='overviewHeadline'>Overview</h1>}*/}
+      <h1 className='MainHeadline'>Overview</h1>
       <Obalance data={data}/>
 
     <div className='overviewContainer'>

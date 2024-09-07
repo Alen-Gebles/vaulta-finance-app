@@ -1,9 +1,10 @@
 .obalanceBox{
   display: flex;
   width: 100%;
-  height: 150px;
+  height: auto;
   gap: 20px;
   background-color: transparent !important;
+  padding: 0px !important;
 }
 .balance-box{
   padding: 20px;
@@ -17,7 +18,7 @@
 .balance-box p{
   margin-bottom: 5px;
   white-space: nowrap;
-  font-size: max(13px, min(2.5vw, 18px));
+  font-size: max(13px, min(2vw, 17px));
 }
 .balance-box h2{
   hite-space: nowrap;
