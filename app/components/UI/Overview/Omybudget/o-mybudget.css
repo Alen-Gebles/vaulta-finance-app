@@ -1,4 +1,34 @@
 .omybudget{
-  height: 50%;
+  height: fit-content;
+  z-index: 10000;
 }
-
+.catBudgetBox{
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 100%;
+  gap: 10px;
+  margin-left: auto;
+}
+.catBudget{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.categoryLine{
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  border-radius: 100vh;
+}
+.catName{
+  color: var(--light-clr);
+  font-size: 15px;
+  margin-left: 20px;
+}
+.catMax{
+  font-weight: 600;
+  font-size: 17px;
+  margin-left: 20px;
+}
