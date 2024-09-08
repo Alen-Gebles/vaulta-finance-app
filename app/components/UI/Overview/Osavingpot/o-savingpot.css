@@ -51,13 +51,16 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 5px;
+  width: 100%;
 }
 .savingItem{
   position: relative;
+  width: 100%;
 }
 .savingh2{
   padding-left: 20px;
   color: var(--light-clr); 
+  white-space: nowrap;
 }
 .savingp{
   padding-left: 20px;

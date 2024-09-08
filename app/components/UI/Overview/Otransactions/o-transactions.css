@@ -1,3 +1,58 @@
 .otransactions{
   height: 100%;
 }
+
+.transInner{
+  height: fit-content;
+  width: 100%;
+}
+.transItem{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0px;
+  border-bottom: 1px solid rgb(239, 236, 236);
+}
+.transItem-left{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.itemsAvatar{
+  border-radius: 100vh;
+  height: auto;
+  width: 46px;
+}
+.transName{
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.transItem-right{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.transAmount{
+  font-weight: 600;
+}
+.transDate{
+  font-size: 14px;
+  color: var(--light-clr);
+}
+
+
+/*/////////////////////*/
+
+@media (max-width:764px){
+  .transName,
+  .transAmount,
+  .transDate{
+    font-size: 13px;
+  }
+  .itemsAvatar{
+    width: 40px;
+  }
+}
