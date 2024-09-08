@@ -1,5 +1,8 @@
+'use client'
 import './o-mybudget.css';
+import dynamic from 'next/dynamic';
 import React from 'react';
+import BudgetPieChart from './BudgetPieChart';
 
 export default function Omybudget({ data }) {
 
@@ -44,33 +47,33 @@ export default function Omybudget({ data }) {
   const limitedBudgetsPerCategory = Object.entries(budgetsPerCategory).slice(0, 4);
 
   const totalSpending = Object.values(spendingInSelectedCategories).reduce((sum, amount) => sum + amount, 0);
-  const spendingLimit = limitedBudgetsPerCategory.reduce((sum, [category, { maximum }]) => sum + maximum, 0)
-
+  const spendingLimit = limitedBudgetsPerCategory.reduce((sum, [category, { maximum }]) => sum + maximum, 0);
 
   return (
     <div className='overview-box omybudget'>
-      <div className='top-row'>
-        <p className='box-name'>My Budgets</p>
-        <a className='box-btn' href="">
-          <button>See Details</button>
-        </a>
-      </div>
+      <div className='budgetInner'>
+        <div className='top-row'>
+          <p className='box-name'>My Budgets</p>
+          <a className='box-btn' href="">
+            <button>See Details</button>
+          </a>
+        </div>
 
-      <div className='catCircle'>
-        <p>spent: {totalSpending}</p>
-        <p>limit: {spendingLimit}</p>
-      </div>
+        <div className='budgetDivider'>
+          <BudgetPieChart spendingInSelectedCategories={spendingInSelectedCategories} budgetsPerCategory={budgetsPerCategory} />
 
-      <div className='catBudgetBox'>
-        {limitedBudgetsPerCategory.map(([category, { maximum, theme }]) => (
-          <div className='catBudget' key={category}>
-            <div style={{backgroundColor: theme }} className='categoryLine'></div>
-            <p className='catName'>{category}</p>
-            <h2 className='catMax'>${maximum.toFixed(2)}</h2>
+          <div className='catBudgetBox'>
+            {limitedBudgetsPerCategory.map(([category, { maximum, theme }]) => (
+              <div className='catBudget' key={category}>
+                <div style={{backgroundColor: theme }} className='categoryLine'></div>
+                <p className='catName'>{category}</p>
+                <h2 className='catMax'>${maximum.toFixed(2)}</h2>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-      <h1>Limit:</h1>
     </div>
+      
   );
 }
