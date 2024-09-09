@@ -60,8 +60,14 @@ export default function Omybudget({ data }) {
         </div>
 
         <div className='budgetDivider'>
-          <BudgetPieChart spendingInSelectedCategories={spendingInSelectedCategories} budgetsPerCategory={budgetsPerCategory} />
-
+          <div className='pieHolder'>
+            <div className='pieInfo'>
+              <h1>${totalSpending}</h1>
+              <p>of ${spendingLimit} limit</p>
+            </div>
+            <BudgetPieChart spendingInSelectedCategories={spendingInSelectedCategories} budgetsPerCategory={budgetsPerCategory} />
+          </div>
+          
           <div className='catBudgetBox'>
             {limitedBudgetsPerCategory.map(([category, { maximum, theme }]) => (
               <div className='catBudget' key={category}>

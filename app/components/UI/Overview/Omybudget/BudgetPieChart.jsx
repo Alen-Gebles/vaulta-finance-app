@@ -12,7 +12,7 @@ const BudgetPieChart = ({ spendingInSelectedCategories, budgetsPerCategory }) =>
       data: Object.values(spendingInSelectedCategories),
       backgroundColor: Object.keys(spendingInSelectedCategories).map(category => budgetsPerCategory[category].theme),
       borderColor: 'rgba(255, 255, 255, 0.5)',
-      borderWidth: 1,
+      borderWidth: 0,
     }]
   };
 
@@ -20,13 +20,11 @@ const BudgetPieChart = ({ spendingInSelectedCategories, budgetsPerCategory }) =>
     responsive: true,
     plugins: {
       legend: {
-        display: false, // This hides the legend
+        display: false,
       },
       tooltip: {
-        callbacks: {
-          label: (tooltipItem) => `${tooltipItem.label}: $${tooltipItem.raw.toFixed(2)}`,
-        },
-      },
+        enabled: false,
+      }
     },
   };
 
