@@ -19,7 +19,7 @@
 }
 
 .sidebar-link-box{
-  margin-top: 60px;
+  margin-top: 40px;
   width: calc(100% - 20px);
   height: auto;
   display: flex;
@@ -33,31 +33,42 @@
   height: 60px;
   width: 100%;
   background-color: inherit;
-  color: #696868;
+  color: #ffffff;
   letter-spacing: 0.5px;
   font-weight: 500;
   padding-left: 20px;
   border-radius: 0px 15px 15px 0px;
   cursor: pointer;
 }
-.sidebar-link:hover{
-  color: white;
+
+.sidebar-link p{
+  opacity: 0.5;
+  transition: 50ms;
 }
-.sidebar-link:hover svg,
-.sidebar-link:hover svg path {
-  fill: white;
+.sidebar-link:hover p{
+  opacity: 1;
+}
+.sidebar-link:hover .sidebar-link-svg{
+  opacity: 1;
 }
 .sidebar-link-svg{
   width: 23px;
   height: auto;
   transition: transform 150ms;
+  opacity: 0.5;
+  transition: 50ms;
 }
+
 .minimize-menu-link:hover svg path {
   stroke: white;
 }
 .minimize-menu-link{
   position: absolute;
   bottom: 40px;
+  opacity: 1;
+}
+.minimize-menu-link:hover{
+  color: white;
 }
 .rotateSidebarLink{
   transform: rotate(180deg);

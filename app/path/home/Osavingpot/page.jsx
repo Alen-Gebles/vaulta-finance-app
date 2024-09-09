@@ -21,7 +21,7 @@ export default function Osavingpot({ data }) {
         <div className='saving-main'>
           <div className='saving-total'>
             <div className='savingSvgHolder'>
-                <img className='savingSvg' src="/icon-pot.svg" alt="pot" />
+                <img className='savingSvg' src="/green-pot.svg" alt="pot" />
             </div>
               
             <div className='saving-total-sub'>
