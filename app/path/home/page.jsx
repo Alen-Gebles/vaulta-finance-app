@@ -8,7 +8,7 @@ import './overview.css'
 
 import React from 'react'
 
-function Overview({ data }) {
+function Home({ data }) {
   return (
     <section className='overview-main'>
       <h1 className='MainHeadline'>Overview</h1>
@@ -31,4 +31,4 @@ function Overview({ data }) {
   )
 }
 
-export default Overview;
+export default Home;
