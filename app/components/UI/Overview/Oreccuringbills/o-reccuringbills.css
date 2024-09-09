@@ -1,3 +1,30 @@
 .oreccuringbills{
   height: 50%;
 }
+.billInner{
+  width: 100%;
+  height: fit-content;
+}
+.billBox{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.billRow{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 15px;
+  background-color: var(--bg-clr);
+  border-radius: 15px;
+}
+.billRow p{
+  color: var(--light-clr);
+  font-size: 16px;
+}
+.billRow h1{
+  font-size: 16px;
+  font-weight: 600;
+}
