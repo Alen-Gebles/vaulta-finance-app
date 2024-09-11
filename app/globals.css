@@ -21,7 +21,7 @@ body {
 background-color: var(--bg-clr);
 padding-left: 300px;
 height: auto;
-/*background-color: #176b17;*/
+  overflow-x: hidden;
 }
 
 .MainHeadline{
@@ -38,5 +38,6 @@ height: auto;
 @media (max-width:1024px){
   body{
     padding-left: 0px !important;
+    padding-bottom: 60px;
   }
 }

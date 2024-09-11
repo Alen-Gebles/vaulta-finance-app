@@ -1,12 +1,13 @@
 .sidebar{
   position: fixed;
   left: 0;
-  top: 0;
+  bottom: 0;
   width: 300px;
   min-height: 100vh;
   background-color: var(--main-dark-clr);
   border-radius: 0px 15px 15px 0px;
   color: white;
+  display: block;
 }
 
 .sidebar-hide{
@@ -74,10 +75,16 @@
   transform: rotate(180deg);
 }
 
+.hideText{
+  display: none;
+}
 
-
-
-
+.activeLink{
+  background-color: var(--bg-clr) !important;
+}
+.active-sidebar-svg path{
+  fill: #277C78 !important;
+}
 
 
 
@@ -89,9 +96,28 @@
 
 @media (max-width:1024px){
   .sidebar{
-    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-height: 60px !important;
+    background-color: var(--main-dark-clr);
+    border-radius: 0px 0px 0px 0px;
+    color: white;
+    z-index: 10000000;
   }
   .logo{
     display: none;
+  }
+  .sidebar-link-box{
+    margin-top: 00px;
+    width: 100%;
+    height: 50px;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .sidebar-link{
+    justify-content: center;
+    padding-left: 00px;
+    border-radius: 0px 0px 0px 0px;
   }
 }
