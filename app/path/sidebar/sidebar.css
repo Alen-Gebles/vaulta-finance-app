@@ -40,10 +40,12 @@
   padding-left: 20px;
   border-radius: 0px 15px 15px 0px;
   cursor: pointer;
+  border-bottom: 4px solid transparent;
+  border-left: 4px solid transparent;
 }
 
 .sidebar-link p{
-  opacity: 0.5;
+  color: rgb(168, 168, 168);
   transition: 50ms;
 }
 .sidebar-link:hover p{
@@ -56,8 +58,11 @@
   width: 23px;
   height: auto;
   transition: transform 150ms;
-  opacity: 0.5;
+  fill: rgb(168, 168, 168);
   transition: 50ms;
+}
+.sidebar-link-svg path{
+  fill: rgb(168, 168, 168);
 }
 
 .minimize-menu-link:hover svg path {
@@ -81,9 +86,14 @@
 
 .activeLink{
   background-color: var(--bg-clr) !important;
+  border-left: 4px solid #277C78;
 }
+.activeLink p{
+  color: black;
+}
+.active-sidebar-svg,
 .active-sidebar-svg path{
-  fill: #277C78 !important;
+  fill: #277C78;
 }
 
 
@@ -111,13 +121,20 @@
   .sidebar-link-box{
     margin-top: 00px;
     width: 100%;
-    height: 50px;
+    height: 60px;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: flex-end !important;
   }
   .sidebar-link{
+    width: 15%;
+    max-width: 140px;
+    height: calc(100% - 7px);
     justify-content: center;
-    padding-left: 00px;
-    border-radius: 0px 0px 0px 0px;
+    padding:0px;
+    border-radius: 10px 10px 0px 0px;
+  }
+  .activeLink{
+    border-bottom: 4px solid #277C78 !important;
   }
 }
