@@ -1,0 +1,124 @@
+.transSection{
+  width: 100%;
+  min-height: 100vh;
+  max-width: auto;
+}
+.transH1{
+  font-size: 35px;
+  margin: 45px 0px 40px 20px;
+  font-weight: 600;
+}
+
+.transMain{
+  width: calc(100% - 35px);
+  height: auto;
+  margin: 0px 20px 20px 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+}
+.transTopRow{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding-inline: 0px;
+  border-bottom: 1px solid rgb(228, 228, 228);
+  padding-block: 10px 30px;
+}
+.transSort{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.transDropdown{
+  width: auto;
+  border: 1px solid rgb(176, 176, 176);
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 10px 15px;
+}
+.transInput{
+  padding: 10px 15px;
+  border: 1px solid rgb(176, 176, 176);
+  background-color: transparent;
+  border-radius: 10px;
+  width: 50%;
+  max-width: 500px;
+}
+.transItem{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  padding: 25px 10px;
+  border-bottom: 1px solid rgb(228, 228, 228);
+  gap: 35px;
+}
+.transAvatar{
+  width: 30px;
+  height: 30px;
+  border-radius: 100vh;
+  position: absolute;
+  left: 0;
+}
+
+.transNameInfo{
+    width: 100%;
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+.transNameRow{
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+}
+.transInfo{
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 40px;
+}
+.transAmount{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.transDate{
+  color: rgb(125, 125, 125);
+  font-size: 13px;
+}
+
+/*/Media*/
+
+@media (max-width: 1024px) {
+  .transNameInfo{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .transAmount{
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .transTopRow{
+    flex-direction: column;
+  }
+  .transInput{
+    width: 100%;
+    max-width: 100%;
+  }
+  .transSort{
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .transDate{
+    font-size: 12px;
+    order: 2;
+  }
+}
