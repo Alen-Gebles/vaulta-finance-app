@@ -44,9 +44,10 @@ const Sidebar = () => {
   };
 
   const sidebarClass = `sidebar ${minimize ? 'sidebar-hide' : ''}`;
-  const linkClass = `sidebar-link ${minimize ? 'justify-end' : ''}`;
+  const linkClass = `sidebar-link ${minimize ? 'minimizedSidebar' : ''}`;
   const textClass = minimize ? 'hidden' : '';
   const logoClass = minimize ? 'opacity-0' : '';
+  const minimizedBar = minimize ? 'minimizedBox' : '';
 
   // Link data
 const links = [
@@ -71,7 +72,7 @@ const links = [
     <section className={sidebarClass}>
       <h1 className={`logo ${logoClass}`}>Vaulta</h1>
 
-      <div className='sidebar-link-box'>
+      <div className={`sidebar-link-box ${minimizedBar}`}>
         {links.map(({ label, icon, href }, index) => (
           <Link 
           href={href} 
