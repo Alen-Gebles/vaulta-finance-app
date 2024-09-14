@@ -37,6 +37,7 @@
 }
 .transAmount{
   font-weight: 600;
+  white-space: nowrap;
 }
 .transDate{
   font-size: 14px;
