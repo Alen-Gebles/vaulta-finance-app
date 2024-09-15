@@ -30,7 +30,7 @@ const Sidebar = () => {
   }, []);
 
   useEffect(() => {
-    if (screenWidth <= 1024) {
+    if (screenWidth <= 1324) {
       setDisplayText('hideText');
     } else {
       setDisplayText('');
