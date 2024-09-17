@@ -7,6 +7,7 @@ export default function Page() {
   const [data, setData] = useState(null);
   const [activePopup, setActivePopup] = useState(null);
   const [categories, setCategories] = useState([]);
+  const [catInput, setCatInput] = useState(true)
   
   useEffect(() => {
     const fetchData = async () => {
@@ -15,7 +16,6 @@ export default function Page() {
         const jsonData = await response.json();
         setData(jsonData);
         
-        // Initialize categories
         updateCategories(jsonData);
       } catch (error) {
         console.error('Error fetching the JSON file', error);
@@ -84,11 +84,23 @@ export default function Page() {
       .filter((transaction) => transaction.category === category)
       .slice(0, 3);
 
+  /*///////////////INPUT MODULE//////////////////////*/
+    const toggleModule = () => {
+      setCatInput(prevState => !prevState);
+    };
+
+  /*/////////////////////////////////////////////////*/
+
   return (
     <section className="budgetSection">
+      <div className={`dimScreen ${!catInput ? 'opacity-0' : 'opacity-100'}`}>
+          <div className={`newBudget ${!catInput ? 'opacity-0' : 'opacity-100'}`}></div>
+      </div>
+      
+
       <div className="budgetTopRow">
         <h1>Budgets</h1>
-        <button>+ Add New Budget</button>
+        <button onClick={() => toggleModule()}>+ Add New Budget</button>
       </div>
 
       <div className="budgetHolder">
