@@ -84,11 +84,12 @@ export default function Page() {
 
           <div className='spendingSummarySection'>
             <h1>Spending Summary</h1>
-            <div>
+            <div className='summaryBox'>
               {limitedBudgetsPerCategory.map(([category, {theme, maximum}, index]) => (
-                <div key={category}>
-                  <p>{category}</p>
-                  <div>
+                <div className='summaryItem' key={category}>
+                  <div className='sumLine' style={{backgroundColor: theme}}></div>
+                  <p className='summaryCat'>{category}</p>
+                  <div className='summaryAmountBox'>
                     <p>${spendingInSelectedCategories[category]?.toFixed(2)}</p>
                     <p>of ${maximum.toFixed(2)}</p>
                   </div>

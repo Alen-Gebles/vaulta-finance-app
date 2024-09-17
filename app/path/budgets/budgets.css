@@ -1,9 +1,8 @@
 .budgetSection{
   display: flex;
   flex-direction: column;
-  width: calc(100% - 40px);
+  width: calc(100% - 00px);
   height: 100%;
-  margin: 20px;
   padding: 20px;
   border-radius: 15px;
 }
@@ -92,10 +91,52 @@
   border-radius: 100vh;
   background-color: white;
 }
-
-
-
-
+.spendingSummarySection h1{
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-weight: 600;
+}
+.spendingSummarySection{
+  width: 100%;
+}
+.summaryBox{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+.summaryItem{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-block: 15px;
+  border-bottom: 1px solid #eae8e8;
+}
+.sumLine{
+  position: absolute;
+  height: 50%;
+  width: 5px;
+  border-radius: 100vh;
+  left: 0px;
+}
+.summaryCat{
+  margin-left: 25px;
+}
+.summaryAmountBox{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.summaryAmountBox p:nth-child(1){
+  font-weight: 600;
+  font-size: 18px;
+}
+.summaryAmountBox p:nth-child(2){
+  font-size: 15px;
+  color: #696868;
+}
 /*//////////////////////////*/
 
 @media (max-width: 1324px){
@@ -107,5 +148,8 @@
   }
   .categoryContainer{
     width: 100%;
+  }
+  .summaryCat{
+    margin-left: 15px;
   }
 }
