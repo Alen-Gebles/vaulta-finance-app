@@ -1,5 +1,4 @@
-'use client';
-
+'use client'
 import React, { useEffect, useState } from 'react';
 import BudgetPieChart from './BudgetPieChart';
 import './budgets.css';
@@ -15,9 +14,9 @@ export default function Page() {
         const response = await fetch('/data.json');
         const jsonData = await response.json();
         setData(jsonData);
-
-        const budgetsPerCategory = calculateCategoryBudgets(jsonData.budgets);
-        setCategories(Object.entries(budgetsPerCategory).slice(0, 4));
+        
+        // Initialize categories
+        updateCategories(jsonData);
       } catch (error) {
         console.error('Error fetching the JSON file', error);
       }
@@ -25,6 +24,11 @@ export default function Page() {
 
     fetchData();
   }, []);
+
+  const updateCategories = (data) => {
+    const budgetsPerCategory = calculateCategoryBudgets(data.budgets);
+    setCategories(Object.entries(budgetsPerCategory).slice(0, 4));
+  };
 
   const calculateCategoryBudgets = (budgets) =>
     budgets.reduce((acc, { category, maximum, theme }) => {
@@ -44,6 +48,10 @@ export default function Page() {
     setCategories((prevCategories) =>
       prevCategories.filter(([category]) => category !== categoryToRemove)
     );
+    setData((prevData) => {
+      const updatedBudgets = prevData.budgets.filter(({ category }) => category !== categoryToRemove);
+      return { ...prevData, budgets: updatedBudgets };
+    });
   };
 
   const toggleEditPopup = (category) =>
@@ -60,10 +68,12 @@ export default function Page() {
     data.transactions,
     selectedCategories
   );
+  
   const totalSpending = Object.values(spendingInSelectedCategories).reduce(
     (sum, amount) => sum + amount,
     0
   );
+  
   const spendingLimit = categories.reduce((sum, [, { maximum }]) => sum + maximum, 0);
 
   const progressBarWidth = (spent, maximum) =>
@@ -85,10 +95,13 @@ export default function Page() {
         <div className="spendingSummaryBox">
           <div className="pieHolder">
             <div className="pieInfoSection">
-              <h1>${totalSpending}</h1>
-              <p>of ${spendingLimit} limit</p>
+              <h1>${totalSpending.toFixed(2)}</h1>
+              <p>of ${spendingLimit.toFixed(2)} limit</p>
             </div>
-            <BudgetPieChart spendingInSelectedCategories={spendingInSelectedCategories}budgetsPerCategory={budgetsPerCategory}/>
+            <BudgetPieChart
+              spendingInSelectedCategories={spendingInSelectedCategories}
+              budgetsPerCategory={budgetsPerCategory}
+            />
           </div>
 
           <div className="spendingSummarySection">
@@ -117,7 +130,7 @@ export default function Page() {
                 <button onClick={() => toggleEditPopup(category)}>&#183;&#183;&#183;</button>
                 <div className={`editPopup ${activePopup === category ? 'opacity-100' : 'opacity-0'}`}>
                   <button>Edit Budget</button>
-                  <button className="text-red-700" onClick={() => removeCategory(category)} >Delete Budget</button>
+                  <button className="text-red-700" onClick={() => removeCategory(category)}>Delete Budget</button>
                 </div>
               </div>
 
@@ -136,7 +149,7 @@ export default function Page() {
                   <div className="divCatBox">
                     <div className="sumLine dcb !h-full"></div>
                     <p className="catp1">Remaining</p>
-                    <p className="catp2">${maximum.toFixed(2)}</p>
+                    <p className="catp2">${(maximum - (spendingInSelectedCategories[category] || 0)).toFixed(2)}</p>
                   </div>
                 </div>
               </div>
