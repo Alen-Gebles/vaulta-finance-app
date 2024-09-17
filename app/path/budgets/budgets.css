@@ -274,13 +274,15 @@
   .budgetHolder{
     flex-direction: column;
   }
-  .spendingSummaryBox{
-    width: 100%;
-  }
   .categoryContainer{
     width: 100%;
   }
   .summaryCat{
     margin-left: 15px;
+  }
+  .spendingSummaryBox{
+    position: relative;
+    top: 0px;
+    width: 100%;
   }
 }
