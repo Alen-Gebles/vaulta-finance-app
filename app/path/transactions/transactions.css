@@ -16,6 +16,7 @@
   padding: 20px;
   background-color: white;
   border-radius: 15px;
+  box-shadow: 3px 3px 15px var(--box-shadow);
 }
 .transTopRow{
   display: flex;

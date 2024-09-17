@@ -5,6 +5,7 @@
   height: 100%;
   padding: 20px;
   border-radius: 15px;
+  position: relative;
 }
 .budgetHolder{
   display: flex;
@@ -40,13 +41,9 @@
   height: 100%;
 }
 
-.categoryBox{
-  height: 400px;
-  width: 100%;
-  background-color: white;
-  border-radius: 15px;
-}
 .spendingSummaryBox{
+  position: sticky;
+  top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,6 +52,7 @@
   background-color: white;
   border-radius: 15px;
   padding: 20px;
+  box-shadow: 3px 3px 15px var(--box-shadow);
 }
 .pieHolder{
   position: relative;
@@ -136,6 +134,139 @@
 .summaryAmountBox p:nth-child(2){
   font-size: 15px;
   color: #696868;
+}
+/*////////////////////////////////////////*/
+
+
+.categoryBox{
+  height: fit-content;
+  width: 100%;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 3px 3px 15px var(--box-shadow);
+  padding: 25px;
+}
+
+.catBoxTop{
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.catDot{
+  width: 20px;
+  height: 20px;
+  border-radius: 100vh;
+  position: absolute;
+  left: 0;
+}
+.catBoxTop h1{
+  font-size: 20px;
+  font-weight: 600;
+  padding-left: 30px;
+}
+.catBoxTop button{
+  font-size: 20px;
+  margin-right: 20px;
+  color: #696868;
+}
+
+.barHolder{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-block: 20px;
+}
+
+.barHolder .backBar{
+  position: relative;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: 100%;
+  background-color: var(--bg-clr);
+  border-radius: 5px;
+}
+.barHolder .progressBar{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border-radius: 5px;
+  height: calc(100% - 10px);
+}
+
+.divCatContainer{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.divCatBox{
+  position: relative;
+  width: 50%;
+  padding-left: 20px;
+}
+.catp2{
+  font-weight: 600;
+  font-size: 18px;
+}
+.catp1{
+  font-size: 15px;
+  color: #696868;
+}
+.dcb{
+  background-color: var(--bg-clr);
+}
+
+
+
+/*////////////////////*/
+
+.latestSpendingBox{
+  width: 100%;
+  height: fit-content;
+  background-color: var(--bg-clr);
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.transactionItem{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-block: 12px;
+  border-bottom: 1px solid #cdcdcd;
+}
+.lsp1{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.lspImg{
+  width: 40px;
+  height: 40px;
+  border-radius: 100vh;
+}
+.lsp1 h1{
+  font-weight: 600;
+}
+.lsp2{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.lsp2 h2{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.lsp2 p{
+  color: #696868;
+  font-size: 14px;
 }
 /*//////////////////////////*/
 
