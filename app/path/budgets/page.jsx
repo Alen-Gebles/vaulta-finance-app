@@ -97,10 +97,11 @@ export default function Page() {
       setActiveDelete(prevState => !prevState);
     };
     const categoriesMenu = [
-      "Entertainment", "Bills", "Groceries", "Dining Out", "Transportation", 
+      "Select Category","Entertainment", "Bills", "Groceries", "Dining Out", "Transportation", 
       "Personal Care", "Education", "Lifestyle", "Shopping", "General"
     ];
     const themes = [
+      { color: "#000000", name: "Select Color" },
       { color: "#277C78", name: "Green" },
       { color: "#F2CDAC", name: "Yellow" },
       { color: "#82C9D7", name: "Cyan" },
@@ -200,10 +201,7 @@ export default function Page() {
               <h1>${totalSpending.toFixed(2)}</h1>
               <p>of ${spendingLimit.toFixed(2)} limit</p>
             </div>
-            <BudgetPieChart
-              spendingInSelectedCategories={spendingInSelectedCategories}
-              budgetsPerCategory={budgetsPerCategory}
-            />
+            <BudgetPieChart spendingInSelectedCategories={spendingInSelectedCategories}budgetsPerCategory={budgetsPerCategory}/>
           </div>
 
           <div className="spendingSummarySection">
