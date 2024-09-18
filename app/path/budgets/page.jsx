@@ -6,6 +6,7 @@ import './budgets.css';
 export default function Page() {
   const [data, setData] = useState(null);
   const [activePopup, setActivePopup] = useState(null);
+  const [activeDelete, setActiveDelete] = useState(false);
   const [categories, setCategories] = useState([]);
   const [catInput, setCatInput] = useState(false)
   const [input, setInput] = useState('');
@@ -55,6 +56,8 @@ export default function Page() {
       const updatedBudgets = prevData.budgets.filter(({ category }) => category !== categoryToRemove);
       return { ...prevData, budgets: updatedBudgets };
     });
+    setActiveDelete(false)
+    setActivePopup(false)
   };
 
   const toggleEditPopup = (category) =>
@@ -89,6 +92,9 @@ export default function Page() {
   /*///////////////INPUT MODULE//////////////////////*/
     const toggleModule = () => {
       setCatInput(prevState => !prevState);
+    };
+    const toggleDeleteModule = () => {
+      setActiveDelete(prevState => !prevState);
     };
     const categoriesMenu = [
       "Entertainment", "Bills", "Groceries", "Dining Out", "Transportation", 
@@ -134,7 +140,6 @@ export default function Page() {
   
       setCategories((prevCategories) => {
         const updatedCategories = [...prevCategories, [categoryInput, newBudget]];
-        // Ensure to sort or update the categories as needed
         return updatedCategories;
       });
   
@@ -182,7 +187,6 @@ export default function Page() {
             <button className='addBudgetBtn' onClick={addNewBudget}>Add Budget</button>
           </div>
       </div>
-      
 
       <div className="budgetTopRow">
         <h1>Budgets</h1>
@@ -222,13 +226,22 @@ export default function Page() {
         <div className="categoryContainer">
           {categories.map(([category, { theme, maximum }]) => (
             <div className="categoryBox" key={category}>
+
+              {/*Delete Conformation */}
+              <div className={`deleteConformation ${activeDelete ? 'flex' : 'hidden'}`}>
+                <h1>Delete this budget?</h1>
+                <p>Are you sure you want to delete this budget? This action cannot be reversed, and all the data inside it will be removed forever.</p>
+                <button className='deleteConfBtn1' onClick={() => removeCategory(category)}>Yes, Confirm Deletion</button>
+                <button className='deleteConfBtn2' onClick={toggleDeleteModule}>No, Go Back</button>
+              </div>
+
               <div className="catBoxTop">
                 <div className="catDot" style={{ backgroundColor: theme }}></div>
                 <h1>{category}</h1>
                 <button onClick={() => toggleEditPopup(category)}>&#183;&#183;&#183;</button>
                 <div className={`editPopup ${activePopup === category ? 'opacity-100' : 'opacity-0'}`}>
                   <button>Edit Budget</button>
-                  <button className="text-red-700" onClick={() => removeCategory(category)}>Delete Budget</button>
+                  <button onClick={toggleDeleteModule}>Delete Budget</button>
                 </div>
               </div>
 

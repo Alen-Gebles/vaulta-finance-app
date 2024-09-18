@@ -380,6 +380,51 @@
   .addBudgetBtn:hover{
     background-color: rgb(42, 42, 42);
   }
+  .deleteConformation{
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100vw - 40px);
+    max-width: 600px;
+    min-width: auto;
+    height: fit-content;
+    background-color: white;
+    z-index: 200000;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgb(114, 114, 114);
+    transition: opacity 300ms;
+    padding: 20px;
+  }
+  .deleteConformation h1{
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .deleteConformation p{
+    color: #696868;
+    margin-block: 20px;
+  }
+  .deleteConformation button{
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .deleteConfBtn2{
+    color: #696868;
+  }
+  .deleteConfBtn2:hover{
+    color: black;
+  }
+  .deleteConfBtn1{
+    background-color: rgba(255, 0, 0, 0.621);
+    color: white;
+    font-weight: 500
+  }
+  .deleteConfBtn1:hover{
+    background-color: rgb(255, 0, 0);
+  }
 /*//////////////////////////*/
 
 @media (max-width: 1324px){
