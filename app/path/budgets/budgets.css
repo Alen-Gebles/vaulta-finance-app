@@ -304,14 +304,13 @@
 /*/////////////NEW BUDGET/////////////////*/
   .dimScreen{
     position: fixed;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 10000px;
     height: 10000px;
     background-color: #00000048 !important;
     z-index: 1000;
-    pointer-events: none;
     transition: 300ms;
   }
   .newBudget{
@@ -319,17 +318,68 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: calc(100vw - 40px);
     max-width: 500px;
+    min-width: auto;
     min-height: 400px;
     height: fit-content;
     background-color: white;
     z-index: 200000;
     border-radius: 15px;
     box-shadow: 0px 0px 15px rgb(114, 114, 114);
-    transition: 300ms;
+    transition: opacity 300ms;
+    padding: 20px;
   }
-
+  .newBudget h1{
+    font-size: 25px;
+    font-weight: 600;
+  }
+  .newBudget .newHeadlineBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 100vh;
+    border: 1px solid #696868;
+    cursor: pointer;
+    z-index: 100;
+  }
+  .newBudget button svg{
+    width: 12px;
+    height: 12px;
+  }
+  .categoryDropdown{
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid #b0b0b0;
+    margin-bottom: 10px;
+  }
+  .budgetlabel{
+    font-size: 14px;
+    color: #696868;
+    margin-bottom: 3px;
+  }
+  .categoryDropdown option{
+    position: relative;
+    padding-block: 10px;
+    cursor: pointer;
+    z-index: 100;
+  }
+  .addBudgetBtn{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    margin-top: 10px
+  }
+  .addBudgetBtn:hover{
+    background-color: rgb(42, 42, 42);
+  }
 /*//////////////////////////*/
 
 @media (max-width: 1324px){
@@ -347,4 +397,5 @@
     top: 0px;
     width: 100%;
   }
+
 }

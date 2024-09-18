@@ -119,6 +119,10 @@ export default function Page() {
                 <option value="Dining Out">Dining Out</option>
                 <option value="Transportation">Transportation</option>
                 <option value="Personal Care">Personal Care</option>
+                <option value="Education">Education</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Shopping">Shopping</option>
+                <option value="General">General</option>
               </select>
             </div>
           </div>
