@@ -368,6 +368,7 @@
     padding-block: 10px;
     cursor: pointer;
     z-index: 100;
+    font-family: Arial, Helvetica, sans-serif;
   }
   .addBudgetBtn{
     width: 100%;
