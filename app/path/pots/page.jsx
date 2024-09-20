@@ -28,6 +28,9 @@ export default function Page() {
     setActivePopup((prev) => (prev === category ? null : category));
 
 
+  const potBarWidth = (total, target) =>
+    Math.min((total / target) * 100, 100);
+
   return (
     <section className='potsMain'>
 
@@ -47,6 +50,27 @@ export default function Page() {
                 <button>Delete Budget</button>
               </div>
           </div>
+
+          <div className='potTotalSaved'>
+            <p className='potTotalSavedP'>Total Saved</p>
+            <h2 className='potTotalSavedH2'>${pot.total.toFixed(2)}</h2>
+          </div>
+
+          <div className='potBarHolder'>
+            <div className='potBarHolderBcg'></div>
+            <div className='potBarHolderMain' style={{ backgroundColor: pot.theme, width: `${potBarWidth(pot.total, pot.target)}%`}}></div>
+          </div>
+
+          <div className='barInfoHolder'>
+            <p className='barInfoHolderP'>{potBarWidth(pot.total, pot.target).toFixed(2)}%</p>
+            <p className='barInfoHolderP'>Target of ${pot.target}</p>
+          </div>
+
+          <div className='potBtnHolder'>
+            <button className='potBtn'>+ Add Money</button>
+            <button className='potBtn'>Withdraw</button>
+          </div>
+
         </div>
 
       ))}

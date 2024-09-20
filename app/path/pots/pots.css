@@ -35,7 +35,7 @@
   position: relative;
   background-color: white;
   width: 100%;
-  height: 300px;
+  height: fit-content;
   border-radius: 15px;
   box-shadow: 3px 3px 15px var(--box-shadow);
   padding: 20px;
@@ -44,10 +44,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 .potTop h1{
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
 }
 .potDot{
   position: absolute;
@@ -89,6 +90,76 @@
   opacity: 1;
 }
 
+.potTotalSaved{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.potTotalSavedP{
+  color: #696868;
+  font-size: 15px;
+}
+.potTotalSavedH2{
+  font-weight: 600;
+  font-size: 32px;
+}
+
+
+.potBarHolder{
+  position: relative;
+  width: 100%;
+  height: 10px;
+  border-radius: 100vh;
+  overflow: hidden;
+}
+.potBarHolderBcg{
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-clr);
+  position: absolute;
+}
+.potBarHolderMain{
+  height: 100%;
+  position: absolute;
+  border-radius: 100vh;
+}
+
+
+.barInfoHolder{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-block: 10px;
+}
+.barInfoHolderP{
+  color: #696868;
+  font-size: 15px;
+}
+
+
+.potBtnHolder{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 40px;
+}
+.potBtn{
+  width: 100%;
+  height: 60px;
+  border-radius: 10px;
+  background-color: var(--bg-clr);
+  border: 2px solid transparent;
+  transition: 100ms;
+}
+.potBtn:hover{
+  border: 2px solid var(--bg-clr);
+  background-color: transparent;
+}
 /*//////////////////////////////////*/
 
 @media (max-width: 1324px){
