@@ -8,8 +8,11 @@ export default function Page() {
   const [data, setData] = useState(null)
   const [toggleDelModule, setToggleDelModule] = useState(false)
   const [toggleNewPot, setToggleNewPot] = useState(false)
-  const [activeDelete, setActiveDelete] = useState(null); // track the pot to be deleted
+  const [activeDelete, setActiveDelete] = useState(null);
   const [activePopup, setActivePopup] = useState(null);
+  const [input, setInput] = useState('');
+  const [spend, setSpend] = useState();
+  const [color, setColor] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -56,18 +59,48 @@ export default function Page() {
   const deletePot = (name) => {
     const filteredPots = allPots.filter((pot) => pot.name !== name);
     setData({ ...data, pots: filteredPots });
-    setActiveDelete(null); // close delete confirmation after deletion
-    setActivePopup(false); // close the popup
+    setActiveDelete(null);
+    setActivePopup(false); 
   };
 
   const toggleDeleteModule = (potName) => {
-    setActiveDelete((prev) => (prev === potName ? null : potName)); // open confirmation for specific pot
+    setActiveDelete((prev) => (prev === potName ? null : potName)); 
   }
 
   const toggleNewPotBtn = () => {
     setToggleNewPot(prevState => !prevState)
   } 
 
+  const handleInputChange = (event) => {
+    setInput(event.target.value);
+  };
+  const handleSpendChange = (event) => {
+    setSpend(event.target.value);
+  };
+  const handleColorChange = (event) => {
+    setColor(event.target.value);
+  };
+
+  const addNewPot = () => {
+    const newPot = {
+      name: input,
+      target: parseFloat(spend),
+      theme: color
+    };
+    setData((prevData) => ({ ...prevData, pots: [...prevData.pots, newPot] }));
+    
+    setInput('');
+    setSpend('');
+    setColor('');
+  };
+
+  const addMoney = (total, add) => {
+    const newTotalSaved = total + add;
+    return newTotalSaved;
+  }
+  
+
+  
 /*//////////////////////////////////////////////////////////////////////*/
 
   return (
@@ -87,19 +120,19 @@ export default function Page() {
               <div className='w-full flex justify-between items-center newHeadline'>
                 <h1>Add New Pot</h1>
                 <button className='newHeadlineBtn' onClick={() => toggleNewPotBtn()}>
-                <svg fill="#696868" height="64px" width="64px" version="1.1" id="Layer_1" viewBox="0 0 492 492"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872 c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872 c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052 L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116 c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952 c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116 c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"></path> </g> </g> </g></svg>
+                  <svg fill="#696868" height="64px" width="64px" version="1.1" id="Layer_1" viewBox="0 0 492 492"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872 c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872 c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052 L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116 c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952 c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116 c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"></path> </g> </g> </g></svg>
                 </button>
               </div>
               <p className='text-gray-500 text-sm mt-3 mb-3'>Choose a category to set a spending budget. These categories can help you monitor spending.</p>
 
               <p className='budgetlabel'>Pot Name</p>
-              <input className="categoryDropdown" type="text" placeholder='e.g. Rainy Days' />
+              <input value={input}  onChange={handleInputChange} className="categoryDropdown" type="text" placeholder='e.g. Rainy Days' />
 
               <p className='budgetlabel'>Maximum Spend</p>
-              <input className="categoryDropdown" type="text" placeholder='$ e.g. 2000' />
+              <input value={spend}  onChange={handleSpendChange}  className="categoryDropdown" type="text" placeholder='$ e.g. 2000' />
 
               <p className='budgetlabel'>Theme</p>
-              <select name="theme" className="categoryDropdown">
+              <select name="theme" className="categoryDropdown" value={color} onChange={handleColorChange}>
                 {themes.map(({ color, name }) => (
                   <option className='catOption' key={color} value={color}>
                     {name}
@@ -107,7 +140,9 @@ export default function Page() {
                 ))}
               </select>
 
-              <button className='addBudgetBtn'>Add Budget</button>
+
+
+              <button className='addBudgetBtn' onClick={addNewPot}>Add Pot</button>
             </div>
           </div>
           {/*///////*/}
@@ -133,7 +168,7 @@ export default function Page() {
 
           <div className='potTotalSaved'>
             <p className='potTotalSavedP'>Total Saved</p>
-            <h2 className='potTotalSavedH2'>${pot.total.toFixed(2)}</h2>
+            <h2 className='potTotalSavedH2'>${pot.total ? pot.total.toFixed(2) : '0.00'}</h2>
           </div>
 
           <div className='potBarHolder'>
@@ -147,7 +182,7 @@ export default function Page() {
           </div>
 
           <div className='potBtnHolder'>
-            <button className='potBtn'>+ Add Money</button>
+            <button className='potBtn' onClick={() => addMoney()}>+ Add Money</button>
             <button className='potBtn'>Withdraw</button>
           </div>
 
