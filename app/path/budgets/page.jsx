@@ -144,10 +144,7 @@ export default function Page() {
         return updatedCategories;
       });
   
-      setData((prevData) => ({
-        ...prevData,
-        budgets: [...prevData.budgets, newBudget]
-      }));
+      setData((prevData) => ({...prevData, budgets: [...prevData.budgets, newBudget]}));
   
       setCategoryInput('');
       setInput('');
