@@ -49,9 +49,14 @@
 .potTop h1{
   font-size: 20px;
   font-weight: 600;
+  margin-left: 30px;
 }
 .potDot{
+  width: 20px;
+  height: 20px;
+  border-radius: 100vh;
   position: absolute;
+  left: 20px;
 }
 .potEdit{
   font-size: 20px;
