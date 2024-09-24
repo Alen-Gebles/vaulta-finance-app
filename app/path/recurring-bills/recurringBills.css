@@ -1,0 +1,60 @@
+.recurringBillsSection{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+.billTopRow{
+  width: 100%;
+  margin-block: 25px 40px;
+}
+.billTopRowH1{
+  font-size: 35px;
+  font-weight: 600;
+}
+
+
+/*////////////////////////////////////////*/
+
+.billDivider{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+/*////////////////////////////////////////////////////////////////////*/
+
+.leftPartBill{
+  display: grid;
+  grid-template-rows: auto auto;
+  flex: 2;
+  gap: 25px;
+}
+
+.totalBillsBox{
+  height: 250px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 15px;
+}
+
+.summaryBillsBox{
+  height: 250px;
+  background-color: white;
+  border-radius: 15px;
+}
+/*///////////////////////////////////////////////////////////////////*/
+
+.rightPartBill{
+  flex: 5;
+}
+
+/*//////////////////////////////////////////////////////////////////*/
+
+@media (max-width: 764px){
+  .billDivider{
+    flex-direction: column;
+  }
+}
