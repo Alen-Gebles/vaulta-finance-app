@@ -32,6 +32,7 @@
   grid-template-rows: auto auto;
   flex: 2;
   gap: 25px;
+  height: fit-content;
 }
 
 .totalBillsBox{
@@ -93,13 +94,104 @@
 
 .rightPartBill{
   flex: 5;
- 
+  width: 100%;
+  height: fit-content;
+  border-radius: 15px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+.transTopRow{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding-inline: 0px;
+  padding-block: 00px 30px;
+}
+.transSort{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.transDropdown{
+  width: auto;
+  border: 1px solid rgb(176, 176, 176);
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.transInput{
+  padding: 10px 15px;
+  border: 1px solid rgb(176, 176, 176);
+  background-color: transparent;
+  border-radius: 8px;
+  width: 100%;
+}
+.inputBox{
+  width: 50%;
+  max-width: 500px;
+  position: relative;
+}
+.inputBox svg{
+  position: absolute;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
+.recurringBill{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+  border-bottom: 1px solid #6968681d;
+}
+.reccLeft{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.reccImg{
+  height: 35px;
+  width: 35px;
+  border-radius: 100vh;
+}
+.reccRight{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
 /*//////////////////////////////////////////////////////////////////*/
-
-@media (max-width: 764px){
+@media (max-width: 1324px){
+  .reccRight{
+    width: fit-content;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0px;
+  }
+  .reccRight p:nth-child(1){
+    order: 2;
+  }
+}
+@media (max-width: 950px){
   .billDivider{
     flex-direction: column;
+  }
+}
+
+@media (max-width: 756px){
+  .reccLeft{
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
   }
 }
