@@ -6,10 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next export"
+    "lint": "next lint"
   },
-  "homepage": "https://alen-gebles.github.io/vaulta-finance-app",
   "dependencies": {
     "chart.js": "^4.4.4",
     "next": "14.2.7",
