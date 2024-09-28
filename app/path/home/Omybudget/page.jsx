@@ -1,20 +1,23 @@
-'use client'
+'use client';
 import './o-mybudget.css';
-import dynamic from 'next/dynamic';
 import React from 'react';
 import BudgetPieChart from './BudgetPieChart';
 
 export default function Omybudget({ data }) {
+  
+  // Check if data and budgets are defined
+  const budgets = data?.budgets || [];
+  const transactions = data?.transactions || [];
 
   const calculateCategoryBudgets = (budgets) => {
     const categoryBudgets = {};
-  
+
     budgets.forEach(budget => {
       const { category, maximum, theme } = budget;
       if (!categoryBudgets[category]) {
         categoryBudgets[category] = {};
       }
-  
+
       categoryBudgets[category] = { maximum, theme };
     });
     return categoryBudgets;
@@ -36,14 +39,15 @@ export default function Omybudget({ data }) {
     return spendingInCategories;
   };
 
-  const budgetsPerCategory = calculateCategoryBudgets(data.budgets);
+  // Safely calculate budgets and spending
+  const budgetsPerCategory = calculateCategoryBudgets(budgets);
 
   const selectedCategories = Object.keys(budgetsPerCategory).slice(0, 4).reduce((acc, category) => {
     acc[category] = true;
     return acc;
   }, {});
 
-  const spendingInSelectedCategories = calculateSpendingInCategories(data.transactions, selectedCategories);
+  const spendingInSelectedCategories = calculateSpendingInCategories(transactions, selectedCategories);
   const limitedBudgetsPerCategory = Object.entries(budgetsPerCategory).slice(0, 4);
 
   const totalSpending = Object.values(spendingInSelectedCategories).reduce((sum, amount) => sum + amount, 0);
@@ -80,6 +84,5 @@ export default function Omybudget({ data }) {
         </div>
       </div>
     </div>
-      
   );
 }

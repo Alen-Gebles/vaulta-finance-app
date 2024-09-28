@@ -3,9 +3,9 @@ import './o-transactions.css';
 import React, { useState, useEffect } from 'react';
 
 export default function Otransactions({ data }) {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
 
-  const transLimited = data.transactions.slice(0, 5);
+  const transLimited = data?.transactions?.slice(0, 5) || [];
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -34,8 +34,8 @@ export default function Otransactions({ data }) {
         {transLimited.map((item, index) => (
           <div className='transItem' key={index}>
             <div className='transItem-left'>
-              <img className='itemsAvatar' src={item.avatar} alt={item.name} />
-              <p className='transName'>{item.name}</p>
+              <img className='itemsAvatar' src={item.avatar || '/default-avatar.png'} alt={item.name || 'Unknown'} />
+              <p className='transName'>{item.name || 'Unknown'}</p>
             </div>
             <div className='transItem-right'>
               <h2 className={`transAmount ${item.amount > 0 ? 'text-green-700' : 'text-red-900'}`}>
@@ -43,7 +43,7 @@ export default function Otransactions({ data }) {
               </h2>
               <p className='transDate'>{formatDate(item.date)}</p>
             </div>
-          </div>  
+          </div>
         ))}
       </div>
     </div>
