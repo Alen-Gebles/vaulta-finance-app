@@ -1,7 +1,6 @@
 // data.js
 export default async function getData() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-  const res = await fetch(`${baseUrl}/data.json`);
+  const res = await fetch('/data.json'); // Fetch from the public directory
   
   if (!res.ok) {
     throw new Error('Failed to fetch data');
