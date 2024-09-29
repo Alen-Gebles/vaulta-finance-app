@@ -7,6 +7,8 @@ export default function Otransactions({ data }) {
 
   const transLimited = data?.transactions?.slice(0, 5) || [];
 
+  const dataLink = 'https://alen-gebles.github.io/vaulta-finance-app'
+
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
@@ -34,7 +36,7 @@ export default function Otransactions({ data }) {
         {transLimited.map((item, index) => (
           <div className='transItem' key={index}>
             <div className='transItem-left'>
-              <img className='itemsAvatar' src={`${item.avatar}`} alt={index} />
+              <img className='itemsAvatar' src={`${dataLink}${item.avatar}`} alt={index} />
               <p className='transName'>{item.name || 'Unknown'}</p>
             </div>
             <div className='transItem-right'>
