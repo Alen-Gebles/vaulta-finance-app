@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import BudgetPieChart from './BudgetPieChart';
 import './budgets.css';
+import getData from '@/app/data';
 
 export default function Page() {
   const [data, setData] = useState(null);
@@ -16,11 +17,10 @@ export default function Page() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://alen-gebles.github.io/vaulta-finance-app/data.json');
-        const jsonData = await response.json();
-        setData(jsonData);
+        const data = await getData();
+        setData(data);
         
-        updateCategories(jsonData);
+        updateCategories(data);
       } catch (error) {
         console.error('Error fetching the JSON file', error);
       }
