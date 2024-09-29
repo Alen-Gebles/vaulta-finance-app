@@ -13,6 +13,8 @@ export default function Page() {
   const [sortOption, setSortOption] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
 
+  const dataLink = 'https://alen-gebles.github.io/vaulta-finance-app'
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -167,7 +169,7 @@ export default function Page() {
             {filteredBills.map((bill, index) => (
               <div key={index} className='recurringBill'>
                 <div className='reccLeft'>
-                  <img className='reccImg' src={bill.avatar} alt={index} />
+                  <img className='reccImg' src={`${dataLink}${bill.avatar}`} alt={index} />
                   <p className='billName'>{bill.name}</p>
                 </div>
                 
