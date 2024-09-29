@@ -11,6 +11,8 @@ export default function Page() {
   const [selectedCategory, setSelectedCategory] = useState("All Transactions");
   const sortTypeRef = useRef("dateDesc");
 
+  const dataLink = 'https://alen-gebles.github.io/vaulta-finance-app'
+
   useEffect(() => {
     async function fetchData() {
       const data = await getData();
@@ -131,7 +133,7 @@ export default function Page() {
             {Array.isArray(filteredTransactions) && filteredTransactions.map((item, index) => (
               <div key={index} className="transItem">
                 <div className="transNameRow">
-                  <img className="transAvatar" src={item.avatar} alt={item.name} />
+                  <img className="transAvatar" src={`${dataLink}${item.avatar}`} alt={item.name} />
                   <div className="transNameInfo">
                     <h2 className="font-semibold transName">{item.name}</h2>
                     <p className="text-gray-500 text-sm">{item.category}</p>
