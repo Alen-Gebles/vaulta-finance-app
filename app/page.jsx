@@ -1,9 +1,6 @@
 import Home from "./path/home/page";
 
 export default async function Main() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-  console.log("Base URL:", baseUrl); // Log base URL
-
   try {
     const res = await fetch(`https://alen-gebles.github.io/vaulta-finance-app/data.json`);
 

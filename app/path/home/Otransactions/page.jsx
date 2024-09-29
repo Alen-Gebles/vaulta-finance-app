@@ -34,7 +34,7 @@ export default function Otransactions({ data }) {
         {transLimited.map((item, index) => (
           <div className='transItem' key={index}>
             <div className='transItem-left'>
-              <img className='itemsAvatar' src={item.avatar || '/default-avatar.png'} alt={item.name || 'Unknown'} />
+              <img className='itemsAvatar' src={item.avatar} alt={item.name} />
               <p className='transName'>{item.name || 'Unknown'}</p>
             </div>
             <div className='transItem-right'>
