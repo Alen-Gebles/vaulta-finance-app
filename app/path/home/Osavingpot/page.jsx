@@ -7,6 +7,8 @@ export default function Osavingpot({ data }) {
 
   const limitedItems = data?.pots?.slice(0, 4) || [];
 
+  const dataLink = 'https://alen-gebles.github.io/vaulta-finance-app'
+
   return (
     <div className='overview-box osavingpot'>
       <div className='saving-inner'>
@@ -20,7 +22,7 @@ export default function Osavingpot({ data }) {
         <div className='saving-main'>
           <div className='saving-total'>
             <div className='savingSvgHolder'>
-              <img className='savingSvg' src="https://alen-gebles.github.io/vaulta-finance-app/green-pot.svg" alt="pot" />
+              <img className='savingSvg' src={`${dataLink}/green-pot.svg`} alt="pot" />
             </div>
             <div className='saving-total-sub'>
               <p className='saving-total-name'>Total Saved</p>
