@@ -14,7 +14,7 @@ export default function Osavingpot({ data }) {
       <div className='saving-inner'>
         <div className='top-row'>
           <p className='box-name'>Saving Pot</p>
-          <a className='box-btn' href="">
+          <a className='box-btn' href="/path/pots">
             <button>See Details</button>
           </a>
         </div>

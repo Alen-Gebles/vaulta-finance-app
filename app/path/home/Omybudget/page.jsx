@@ -58,7 +58,7 @@ export default function Omybudget({ data }) {
       <div className='budgetInner'>
         <div className='top-row'>
           <p className='box-name'>My Budgets</p>
-          <a className='box-btn' href="">
+          <a className='box-btn' href="/path/budgets">
             <button>See Details</button>
           </a>
         </div>

@@ -33,7 +33,7 @@ export default function Oreccuringbills({ data }) {
       <div className='billInner'>
         <div className='top-row'>
           <p className='box-name'>Recurring Bills</p>
-          <a className='box-btn' href="">
+          <a className='box-btn' href="/path/recurring-bills">
             <button>See Details</button>
           </a>
         </div>

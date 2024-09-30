@@ -17,6 +17,8 @@
 .logo{
   font-size: 35px;
   margin: 45px 0px 0px 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .sidebar-link-box{

@@ -27,7 +27,7 @@ export default function Otransactions({ data }) {
     <div className='overview-box otransactions'>
       <div className='top-row'>
         <p className='box-name'>Transactions</p>
-        <a className='box-btn' href="">
+        <a className='box-btn' href="/path/transactions">
           <button>View All</button>
         </a>
       </div>
