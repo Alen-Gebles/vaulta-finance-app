@@ -13,6 +13,8 @@ export default function Page() {
   const [input, setInput] = useState('');
   const [categoryInput, setCategoryInput] = useState();
   const [colorInput, setColorInput] = useState('');
+
+  const dataLink = 'https://alen-gebles.github.io/vaulta-finance-app'
   
   useEffect(() => {
     const fetchData = async () => {
@@ -271,7 +273,7 @@ export default function Page() {
                 {limitedTransactions(category).map((transaction) => (
                   <div key={transaction.name} className="transactionItem">
                     <div className="lsp1">
-                      <img className="lspImg" src={transaction.avatar} alt={transaction.name} />
+                      <img className="lspImg" src={`${dataLink}${transaction.avatar}`} alt={transaction.name} />
                       <h1 className="transactionName">{transaction.name}</h1>
                     </div>
                     <div className="lsp2">
